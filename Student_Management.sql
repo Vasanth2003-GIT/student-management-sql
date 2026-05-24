@@ -12,7 +12,7 @@ CREATE TABLE Students (
     student_name VARCHAR2(100) NOT NULL,           
     department   VARCHAR2(50)  NOT NULL,             
     email        VARCHAR2(100) UNIQUE,               
-    join_year    NUMBER(4)     CHECK                                     
+    join_year    NUMBER(4)     CHECK join_year NUMBER(4) CHECK (join_year >= 2020)                                 
 );
 
 -- TABLE 2 : Courses
@@ -20,7 +20,7 @@ CREATE TABLE Courses (
     course_id    NUMBER        PRIMARY KEY,
     course_name  VARCHAR2(100) NOT NULL,
     course_code  VARCHAR2(20)  UNIQUE  NOT NULL,     
-    credits      NUMBER(1)     CHECK 
+    credits      NUMBER(1)     CHECK credits NUMBER(1) CHECK (credits BETWEEN 1 AND 5)    
 );
 
 -- TABLE 3 : Marks 
